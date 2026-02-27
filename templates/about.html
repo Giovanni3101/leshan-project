@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %} About Page {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<!-- AOS Animation Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO / INTRO SECTION -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="fs-4 fw-bold">
+      We are a community-driven organization dedicated to bringing hope, resources, and sustainable change to those in need—one life, one project, one act of kindness at a time.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT US SECTION -->
+<section id="about" class="about-section container">
+  <h2 class="section-title" data-aos="fade-up">About Us</h2>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Established in 2023, Nalepo is a nonprofit organization dedicated to driving sustainable, community-centered impact. We work with integrity and purpose to address systemic challenges in underserved regions through strategic, high-impact programs. Guided by values such as honesty, accountability, transparency, and inclusivity, our team is committed to delivering meaningful change and fostering resilience across generations.
+  </p>
+  <h5 data-aos="fade-up" data-aos-delay="200">Our Main Focus:</h5>
+  <ul data-aos="fade-up" data-aos-delay="300">
+    <li>Alleviating hunger through sustainable agricultural systems</li>
+    <li>Educational empowerment for marginalized communities</li>
+    <li>Sensitization and advocacy on key healthcare issues</li>
+    <li>Youth enterprise development and economic inclusion</li>
+    <li>Promotion of gender equity and equal opportunity</li>
+  </ul>
+</section>
+
+<!-- OUR TEAM SECTION -->
+<section id="team" class="team-section container">
+  <h2 class="section-title" data-aos="fade-up">Our Team</h2>
+
+  <!-- Founder -->
+  <div class="founder" data-aos="fade-up" data-aos-delay="100">
+    <img src="/static/founder.jpg" alt="Founder Philip">
+    <div class="founder-info">
+      <p>Philip Kanyinke Minis is the visionary behind Nalepo Organisation, a passionate and purpose-driven individual currently pursuing a Bachelor’s degree in Education at the University of Nairobi...</p>
+      <p class="fw-bold">Founder, Nalepo Organization</p>
+    </div>
+  </div>
+
+  <!-- TEAM CARDS GRID -->
+  <div class="row team-cards g-4 mt-5">
+    {% for member in [
+      {'img': 'founder.jpg', 'name': 'Philip', 'role': 'Chairperson'},
+      {'img': 'danson.jpg', 'name': 'Danson', 'role': 'Vice Chairperson'},
+      {'img': 'kaigil1.jpeg', 'name': 'Dickson', 'role': 'Secretary'},
+      {'img': 'esther.jpg', 'name': 'Esther', 'role': 'Coordinator'},
+      {'img': 'nabulu.jpg', 'name': 'James', 'role': 'Treasurer'},
+      {'img': 'kipees.jpg', 'name': 'Kipees', 'role': 'Treasurer'},
+      {'img': 'leshan.jpg', 'name': 'Leshan', 'role': 'Member'},
+      {'img': 'mantaine.jpg', 'name': 'Mantaine', 'role': 'Member'},
+      {'img': 'max1.jpeg', 'name': 'Kuyioni', 'role': 'Member'},
+      {'img': 'founder.jpg', 'name': 'William', 'role': 'Member'},
+      {'img': 'kelvin.jpg', 'name': 'Kelvin', 'role': 'Member'},
+      {'img': 'janet1.jpeg', 'name': 'Janet', 'role': 'Member'}
+    ] %}
+    <div class="col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+      <div class="card team-card">
+        <img src="/static/{{ member.img }}" class="card-img" alt="{{ member.name }}">
+        <div class="card-overlay">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<hr style="margin-left: 7%; margin-right: 7%;">
+
+<!-- VISION & MISSION SECTION -->
+<section id="vision" class="vision-section container">
+  <div class="vision-cards d-flex flex-wrap justify-content-center gap-4">
+    <div class="vision-card" data-aos="slide-right" data-aos-delay="100">
+      <h4>Vision</h4>
+      <p>A society where women, men, children, and persons with disabilities enjoy equal rights, opportunities, and high quality of life.</p>
+    </div>
+    <div class="vision-card" data-aos="slide-left" data-aos-delay="200">
+      <h4>Mission</h4>
+      <p>To promote, coordinate, monitor, and evaluate gender equality, women's empowerment, social development, care, participation, and protection of children and persons with disability as an integral part of national development.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000
+  });
+</script>
+{% endblock %}
