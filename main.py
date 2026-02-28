@@ -10,7 +10,7 @@ import base64, datetime
 
 from datetime import datetime
 
-# from database import fetch_blogs,fetch_campaigns,fetch_contact,fetch_donation,fetch_eventreg,fetch_events,fetch_payments,fetch_users,fetch_volunteers,insert_volunteers,insert_blogs,insert_campaigns,insert_contact,insert_donations,insert_event_registration,insert_events,insert_payments,insert_users,check_user,conn
+from database import fetch_blogs,fetch_campaigns,fetch_contact,fetch_donation,fetch_eventreg,fetch_events,fetch_payments,fetch_users,fetch_volunteers,insert_volunteers,insert_blogs,insert_campaigns,insert_contact,insert_donations,insert_event_registration,insert_events,insert_payments,insert_users,check_user,conn
 
 from flask_bcrypt import Bcrypt
 
